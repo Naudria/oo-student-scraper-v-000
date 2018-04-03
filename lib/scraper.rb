@@ -2,7 +2,6 @@ require 'open-uri'
 require 'pry'
 
 class Scraper
-# used for scrpaing the index page w/ all student listed
   def self.scrape_index_page(index_url)
     index_page = Nokogiri::HTML(open(index_url))
     all_students = []
@@ -17,8 +16,6 @@ class Scraper
     all_students
   end
 
-
-# used for scraping individual students profile
   def self.scrape_profile_page(profile_url)
     student = {}
     profile_page = Nokogiri::HTML(open(profile_url))
@@ -42,4 +39,3 @@ class Scraper
   end
 
 end
-
